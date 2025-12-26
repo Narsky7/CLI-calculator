@@ -12,22 +12,22 @@
 2. Oczy i Nogi Robota (Helpery)
 Zdefiniuj te funkcje przed main.
 
-[ ] Funkcja peek():
+[x] Funkcja peek():
 
 Ma zwracać input[pos].
 
 Musi sprawdzać, czy nie wyjechaliśmy poza string (znak \0 lub \n).
 
-[ ] Funkcja advance():
+[x] Funkcja advance():
 
 Ma zwiększać pos o 1 (pos++).
 
 Może zwracać znak, który właśnie minęliśmy (opcjonalne, ale wygodne).
 
-[ ] Test: W main wypisz ręcznie wynik peek(), zrób advance() i wypisz znowu, żeby sprawdzić czy działa.
+[x] Test: W main wypisz ręcznie wynik peek(), zrób advance() i wypisz znowu, żeby sprawdzić czy działa.
 
 3. Parsowanie Liczb (Serce Etapu 1)
-[ ] Funkcja parse_number():
+[x] Funkcja parse_number():
 
 Zwraca int.
 
@@ -43,7 +43,7 @@ Zrób advance().
 
 Zwróć result.
 
-[ ] Test: Wpisz w terminalu "123", wywołaj w main tylko parse_number() i wypisz wynik %d. Musi wyjść liczba 123.
+[x] Test: Wpisz w terminalu "123", wywołaj w main tylko parse_number() i wypisz wynik %d. Musi wyjść liczba 123.
 
 4. Parsowanie Wyrażeń (Mózg)
 [ ] Funkcja skip_whitespace():
