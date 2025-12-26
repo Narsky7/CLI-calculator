@@ -1,13 +1,13 @@
 ## Roadmapa: Etap 1 (Liczby całkowite + Dodawanie/Odejmowanie)
-[ ] Zmień pętlę: Ustaw while(1) (nieskończona pętla), aby program działał ciągle.
+[x] Zmień pętlę: Ustaw while(1) (nieskończona pętla), aby program działał ciągle.
 
-[ ] Bufor na tekst: Zadeklaruj w main tablicę, np. char buffer[1024]; (to będzie miejsce, gdzie ląduje tekst z klawiatury).
+[x] Bufor na tekst: Zadeklaruj w main tablicę, np. char buffer[1024]; (to będzie miejsce, gdzie ląduje tekst z klawiatury).
 
-[ ] Czytanie linii: Użyj funkcji fgets(buffer, 1024, stdin), aby pobrać tekst od użytkownika.
+[x] Czytanie linii: Użyj funkcji fgets(buffer, 1024, stdin), aby pobrać tekst od użytkownika.
 
-[ ] Podpięcie: Przypisz input = buffer; i zresetuj pos = 0; na początku każdego obiegu pętli.
+[x] Podpięcie: Przypisz input = buffer; i zresetuj pos = 0; na początku każdego obiegu pętli.
 
-[ ] Wyjście awaryjne: Dodaj if sprawdzający, czy użytkownik wpisał "exit" (użyj strncmp), żeby przerwać pętlę.
+[x] Wyjście awaryjne: Dodaj if sprawdzający, czy użytkownik wpisał "exit" (użyj strncmp), żeby przerwać pętlę.
 
 2. Oczy i Nogi Robota (Helpery)
 Zdefiniuj te funkcje przed main.
