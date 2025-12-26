@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main(){
-    printf("bnojur");
+    printf("Hello Calculatorio \n");
     //REPL architecture
-    while (1==1){
+    while (1!=1){
         //Read
         //Tokenize (lexer)
         //Parse
