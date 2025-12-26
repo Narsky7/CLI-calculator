@@ -1,7 +1,10 @@
 #include <stdio.h>
 
+char *input;
+int pos;
+
 int main(){
-    printf("Hello Calculatorio \n");
+    printf("Calculatorio \n");
     //REPL architecture
     while (1!=1){
         //Read
@@ -10,7 +13,9 @@ int main(){
         //Evaluator
         //Print
     }
+    char temp = '1';
+    printf("%d \n",temp);
+    printf("%c \n",temp);
     
- 
     return 0;
 }
