@@ -32,13 +32,51 @@ int parse_number(){
     return result;
 }
 
+void skip_whitespace(){
+    while(isspace(peek())){
+        advance();
+    }
+}
+
+int parse_expression(){
+    skip_whitespace();
+    int val = parse_number();
+    while (1){
+        skip_whitespace();       
+        char operator = peek();
+
+        if (operator == '+') {
+            advance();
+            skip_whitespace();
+            int next_val = parse_number();
+            val = val + next_val;
+        } 
+        else if (operator == '-') {
+            advance();
+            skip_whitespace();
+            int next_val = parse_number();
+            val = val - next_val;
+        } 
+        else if (operator == '\0' || operator == '\n') {
+            break;
+        } 
+        else {
+            // Handle unknown characters
+            printf("Syntax Error: Unexpected character '%c'\n", operator);
+            return -1;
+        }
+    }
+    return val;
+}
+
+
 int main(){
 
     char buffer[1024];
     //REPL architecture
     while (1==1){
         //Read
-        printf("Type in: ");
+        printf(">> ");
         fgets(buffer,sizeof(buffer),stdin);
         input = buffer;
         pos = 0;
@@ -49,10 +87,12 @@ int main(){
         }
         //Tokenize (lexer)
         //Parse
+        int equals = parse_expression();
         //Evaluate
         //Print
-        printf("check 1: %d\n", parse_number());
+        printf("%d \n", equals);
 
     }    
+    // todo : fix whitespace bug + fix multiple numbers addiditon problem
     return 0;
 }

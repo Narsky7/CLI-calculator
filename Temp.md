@@ -46,7 +46,7 @@ Zwróć result.
 [x] Test: Wpisz w terminalu "123", wywołaj w main tylko parse_number() i wypisz wynik %d. Musi wyjść liczba 123.
 
 4. Parsowanie Wyrażeń (Mózg)
-[ ] Funkcja skip_whitespace():
+[x] Funkcja skip_whitespace():
 
 Dopóki peek() to spacja, rób advance(). Wstawiaj to wywołanie wszędzie tam, gdzie spodziewasz się spacji.
 
@@ -75,9 +75,9 @@ Jeśli op to koniec linii/stringa -> break (wyjdź z pętli).
 Zwróć val.
 
 5. Wielki Finał Etapu 1
-[ ] Uruchomienie: W pętli main wywołaj int wynik = parse_expression(); i wypisz go printf("%d\n", wynik);.
+[x] Uruchomienie: W pętli main wywołaj int wynik = parse_expression(); i wypisz go printf("%d\n", wynik);.
 
-[ ] Test boju: Sprawdź działania: 10 + 5, 20 - 3 + 100, 123+1.
+[x] Test boju: Sprawdź działania: 10 + 5, 20 - 3 + 100, 123+1.
 
 Etap 2 (Priorytety): Dodaj * / i nawiasy ( ). Tutaj wdrożysz pełny Recursive Descent.
 
