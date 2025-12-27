@@ -5,69 +5,23 @@
 char *input;
 int pos;
 
+// token definitions
 
-char peek(){
-    if (input[pos] == '\0') {
-        return '\0';
-    }
-    if (input[pos] == '\n') {
-        return '\0';
-    }
+typedef enum {
+    TOKEN_INT,
+    TOKEN_PLUS,
+    TOKEN_MINUS,
+    TOKEN_MUL,
+    TOKEN_DIV,
+    TOKEN_LPAREN,
+    TOKEN_RPAREN,
+    TOKEN_EOF, // End Of File
+} TokenType;
 
-    return input[pos];
-}
-
-void advance(){
-    pos++;
-}
-
-int parse_number(){
-    int result = 0;
-
-    while(isdigit(peek())){
-        result = result * 10 + (peek() - '0') ;
-        advance();
-    }
-
-    return result;
-}
-
-void skip_whitespace(){
-    while(isspace(peek())){
-        advance();
-    }
-}
-
-int parse_expression(){
-    skip_whitespace();
-    int val = parse_number();
-    while (1){
-        skip_whitespace();       
-        char operator = peek();
-
-        if (operator == '+') {
-            advance();
-            skip_whitespace();
-            int next_val = parse_number();
-            val = val + next_val;
-        } 
-        else if (operator == '-') {
-            advance();
-            skip_whitespace();
-            int next_val = parse_number();
-            val = val - next_val;
-        } 
-        else if (operator == '\0' || operator == '\n') {
-            break;
-        } 
-        else {
-            // Handle unknown characters
-            printf("Syntax Error: Unexpected character '%c'\n", operator);
-            return -1;
-        }
-    }
-    return val;
-}
+typedef struct{
+    TokenType type;
+    int value;
+} Token;
 
 
 int main(){
