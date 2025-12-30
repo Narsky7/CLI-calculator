@@ -6,7 +6,6 @@
 char *input;
 int pos;
 
-int parse_expression();
 // token definitions
 
 typedef enum {
