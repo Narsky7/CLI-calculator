@@ -79,7 +79,7 @@ int main(){
     //REPL architecture
     while (1==1){
         //Read
-        printf(">> ");
+        printf("$> ");
         fgets(buffer,sizeof(buffer),stdin);
         input = buffer;
         pos = 0;

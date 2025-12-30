@@ -4,3 +4,4 @@ if [ -z "$1" ]; then
     exit 1
 fi
 gcc "$1" -o "${1%.*}" && ./"${1%.*}"
+#Remember to change CRLF to LF
