@@ -17,11 +17,13 @@ typedef enum {
     TOKEN_LPAREN,
     TOKEN_RPAREN,
     TOKEN_EOF, // End Of File
+    TOKEN_ID,
 } TokenType;
 
 typedef struct{
     TokenType type;
     int value;
+    char name[64];
 } Token;
 
 void eat(TokenType type);
@@ -47,6 +49,7 @@ void skip_whitespace(){
     }
 }
 
+//lexer
 Token get_next_token(){
     skip_whitespace();
     char c = input[pos];
@@ -67,14 +70,25 @@ Token get_next_token(){
         }
         return token;
     }
-
+    if (isalpha(input[pos])){
+        token.type = TOKEN_ID;
+        int name_pos = 0;
+        while(isalpha(input[pos])){
+            if (name_pos < 63){
+                token.name[name_pos] = c;
+                name_pos++; 
+            }
+            pos++;
+        }
+        token.name[name_pos] = '\0';
+        return token;
+    }
     if (c == '+'){token.type = TOKEN_PLUS;pos++;return token;}
     if (c == '-'){token.type = TOKEN_MINUS;pos++;return token;}
     if (c == '*'){token.type = TOKEN_MUL;pos++;return token;}
     if (c == '/'){token.type = TOKEN_DIV;pos++;return token;}
     if (c == '('){token.type = TOKEN_LPAREN;pos++;return token;}
     if (c == ')'){token.type = TOKEN_RPAREN;pos++;return token;}
-
     printf("syntax error, '%c' is not a valid character",c);
     exit(1);
 }
