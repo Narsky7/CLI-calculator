@@ -1,3 +1,7 @@
+/*
+ Easy CLI calculator by narsky
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
