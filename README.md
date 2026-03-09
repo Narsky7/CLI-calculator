@@ -9,15 +9,11 @@
 Simply use script compile_script.sh
 
 ```
-./compile_script.sh main.c
+make
+
+./bin/clicalc
 ```
 
-Or u can just compile it yourself using gcc
-
-```
-gcc main.c -lm -o calc
-./calc
-```
 ## Usage
 Right now you can use operations and sings as:
 - +,-,*,/
